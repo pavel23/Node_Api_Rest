@@ -1,2 +1,20 @@
+<<<<<<< HEAD
 /node_modules
 /data
+=======
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+npm-debug.log
+node_modules
+>>>>>>> 8250cc6b02fb7535f8df22440e0c6952fefe3234
