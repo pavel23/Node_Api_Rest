@@ -4,7 +4,7 @@ module.exports = function(app) {
   var User = require('../models/users.js');
 
   findAllUsers = function(req, res) {
-    User.find(function(err, users) {
+    return User.find(function(err, users) {
       if(!err) {
         console.log('GET /users');
         res.json(users);
@@ -15,7 +15,7 @@ module.exports = function(app) {
   };
 
   findByEmail = function(req, res) {
-    User.find({email: req.params.email}, function(err, user) {
+    return User.find({email: req.params.email}, function(err, user) {
       if(!err) {
         console.log('GET /user/' + req.params.email);
         res.json(user);
@@ -40,13 +40,13 @@ module.exports = function(app) {
       longitude: req.body.longitude
     });
 
-    user.save(function(err, data) {
+    return user.save(function(err, data) {
       return res.json(data);
     });
   };
 
   updateUser = function(req, res) {
-    User.update({email: req.params.email}, req.body, {multi: false}, function (err, count) {
+    return User.update({email: req.params.email}, req.body, {multi: false}, function (err, count) {
         return res.json({count: count});
     });
   };
